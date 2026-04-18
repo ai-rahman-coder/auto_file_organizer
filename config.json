@@ -1,0 +1,10 @@
+{
+  "base_path": "Downloads",
+  "categories": {
+    "Excel": [".xlsx", ".xls"],
+    "Presentations": [".pptx", ".ppt"],
+    "Documents": [".pdf", ".docx", ".txt"],
+    "Images": [".jpg", ".png"],
+    "Videos": [".mp4", ".mkv"]
+  }
+}
