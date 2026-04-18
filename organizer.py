@@ -1,6 +1,12 @@
 import os
 import json
 import shutil
+import sys
+
+DRY_RUN = True  # default safe mode
+
+if "--run" in sys.argv:
+    DRY_RUN = False
 
 # Get your home directory (works on any system)
 HOME = os.path.expanduser("~")
@@ -37,7 +43,13 @@ for file in os.listdir(folder_path):
                 os.makedirs(new_folder, exist_ok=True)
 
                 unique_name = get_unique_filename(new_folder, file)
-                shutil.move(file_path, os.path.join(new_folder, unique_name))
+                dest_path = os.path.join(new_folder, unique_name)
+
+                if DRY_RUN:
+                    print(f"[DRY RUN] {file} → {dest_path}")
+                else:
+                    shutil.move(file_path, dest_path)
+                    print(f"Moved: {file} → {dest_path}")
 
                 print(f"Moved: {file} → {folder}/{unique_name}")
                 moved = True

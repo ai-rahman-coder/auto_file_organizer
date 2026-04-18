@@ -1,5 +1,5 @@
 {
-  "base_path": "Downloads",
+  "base_path": "Documents/organizer/organize",
   "categories": {
     "Excel": [".xlsx", ".xls"],
     "Presentations": [".pptx", ".ppt"],
